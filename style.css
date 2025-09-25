@@ -482,7 +482,7 @@ top: 0;
 .hero .btn {
   margin-top: 20px;
   padding: 12px 28px;
-  background: linear-gradient(135deg, hsl(244, 63%, 41%), hsl(258, 89%, 56%));
+  background: linear-gradient(135deg, hsl(302, 79%, 28%), hsl(306, 85%, 24%));
   color: #fff;
   text-decoration: none;
   font-weight: bold;
@@ -1013,7 +1013,7 @@ body.dark .mode-toggle:hover {
 .footer {
   background: var(--gray-900);
   color: var(--gray-300);
-  padding: var(--space-16) var(--space-6) var(--space-8;
+  padding: var(--space-16) var(--space-6) var(--space-8);
 }
 
 .footer-content {
