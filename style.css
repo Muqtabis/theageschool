@@ -110,6 +110,10 @@ body {
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  --landing-bg-gradient: linear-gradient(135deg, #061e3c, #0b4d8f);
+  --landing-panel-bg: rgba(0, 0, 0, 0.45);
+  --landing-accent: #ffd166;
+  --landing-accent-hover: #ffbf3a;
 }
 
 /* ------------------------------
@@ -157,6 +161,9 @@ p {
 .skip-link:focus {
   top: var(--space-6);
 }
+/* Landing Page */
+
+   
 
 /* ------------------------------
   Fixed Navigation Bar
@@ -325,13 +332,8 @@ p {
     position: absolute;
     top: 70px;
     right: 10%;
-    background: linear-gradient(135deg, hsl(244, 63%, 41%), hsl(258, 89%, 56%));
+    background: #3771aa;
     flex-direction: column;
-    align-items: flex-start;
-    color: var(--white) !important;
-    box-shadow: var(--shadow-xl);
-    backface-visibility: hidden;
-    backdrop-filter: blur(20px);
     width: 200px;
     padding: 15px;
     border-radius: 8px;
@@ -404,7 +406,10 @@ p {
 .hero {
   position: relative;
   background:url('theageheader.jpg') center/cover no-repeat;
-   height: 400px;
+   height: auto;
+  min-height: clamp(24rem, 65vh, 32rem);
+  padding: clamp(var(--space-12), 12vw, var(--space-16))
+           clamp(var(--space-4), 8vw, var(--space-12));
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -439,14 +444,12 @@ top: 0;
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 800px;
-  padding: 0 var(--space-6);
-  max-width: 900px;
-  padding: 0 2rem;
+  margin-top: 0;
+  padding-inline: clamp(var(--space-4), 6vw, var(--space-8));
+  max-width: min(100%, 48rem);
   animation: fadeInUp 1s var(--transition-base);
-  margin-top: -50px;
-
 }
+
 .hero h1 {
   font-size: 2.5rem;
   font-weight: bold;
@@ -558,12 +561,14 @@ top: 0;
   Section Layouts
 ------------------------------ */
 .section {
-  padding: var(--space-20) var(--space-6);
+  padding: clamp(var(--space-12), 8vw, var(--space-20))
+           clamp(var(--space-4), 6vw, var(--space-12));
 }
 
 .container {
-  max-width: 1200px;
+  width: min(100%, 1200px);
   margin: 0 auto;
+  padding-inline: clamp(var(--space-4), 5vw, var(--space-8));
 }
 
 .section-header {
@@ -602,11 +607,22 @@ top: 0;
 .grid {
   display: grid;
   gap: var(--space-8);
+  justify-content: center;
+  justify-items: center;
 }
 
-.grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-.grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-.grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(clamp(18rem, 40vw, 24rem), 1fr));
+  gap: var(--space-12);
+}
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(clamp(14rem, 30vw, 20rem), 1fr));
+  gap: var(--space-12);
+}
+.grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(clamp(10rem, 22vw, 16rem), 1fr));
+  gap: var(--space-12);
+}
 
 /* Card Components */
 .card {
@@ -617,6 +633,8 @@ top: 0;
   border: 1px solid var(--border);
   transition: all var(--transition-base);
   height: 100%;
+  width: min(100%, 22rem);
+  margin-inline: auto;
 }
 
 .card:hover {
@@ -652,41 +670,105 @@ top: 0;
 
 /* ------------------------------
    Contact Form Styles (Premium)
+/* ------------------------------
+   Cards Section (Home Page)
 ------------------------------ */
-form {
- max-width: 350px;
-  margin: 50px auto;
-  padding: 40px;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  border-radius: 1.2rem;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-  font-family: 'Inter', sans-serif;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-   border: 1px solid rgba(255, 255, 255, 0.2);
-  color: hsl(222, 15%, 40%);
-  font-size: 1rem;
+.container {
+  display: flex;
+  flex-wrap: wrap;       /* allows cards to wrap on smaller screens */
+  justify-content: center;
+  gap: 20px;             /* space between cards */
+  margin: 50px 20px;
 }
 
-form:hover {
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  padding: 30px;
+  text-align: center;
+  width: 250px;
+  transition: transform 0.2s ease;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card a {
+  text-decoration: none;
+  color: #333;
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+}
+
+/* ------------------------------
+   Fee Structure Page
+------------------------------ */
+h1 {
+  text-align: center;
+  color: #222;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+table th {
+  background: #0077cc;
+  color: white;
+}
+
+/* ------------------------------
+   Contact Form Page
+------------------------------ */
+.contact-section {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: clamp(var(--space-4), 4vw, var(--space-6));
+  text-align: center;
+}
+
+.contact-section form {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: clamp(var(--space-6), 6vw, var(--space-8));
+  border-radius: 1.2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: hsl(222, 15%, 40%);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.contact-section form:hover {
   transform: translateY(-5px);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
 }
 
-form h2 {
+.contact-section form h2 {
   text-align: center;
   font-size: 2rem;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   color: hsl(244, 63%, 51%);
   letter-spacing: 0.5px;
 }
 
-.form-group {
+.contact-section .form-group {
   position: relative;
   margin-bottom: 25px;
 }
 
-form label {
+.contact-section form label {
   position: absolute;
   top: 14px;
   left: 18px;
@@ -696,12 +778,13 @@ form label {
   transition: all 0.3s ease;
 }
 
-form input:focus + label,
-form input:not(:placeholder-shown) + label,
-form textarea:focus + label,
-form textarea:not(:placeholder-shown) + label,
-form select:focus + label,
-form select:not([value=""]) + label {
+.contact-section .form-group:focus-within label,
+.contact-section form input:focus + label,
+.contact-section form input:not(:placeholder-shown) + label,
+.contact-section form textarea:focus + label,
+.contact-section form textarea:not(:placeholder-shown) + label,
+.contact-section form select:focus + label,
+.contact-section form select:not([value=""]) + label {
   top: -10px;
   left: 14px;
   font-size: 0.85rem;
@@ -710,11 +793,10 @@ form select:not([value=""]) + label {
   padding: 0 6px;
 }
 
-form input,
-form textarea,
-form select {
+.contact-section form input,
+.contact-section form textarea,
+.contact-section form select {
   width: 100%;
-   height: 100%;
   padding: 16px 18px;
   border: 1px solid hsl(244, 10%, 91%);
   border-radius: 12px;
@@ -723,23 +805,25 @@ form select {
   transition: all 0.3s ease;
 }
 
-form input:focus,
-form textarea:focus,
-form select:focus {
+.contact-section form input:focus,
+.contact-section form textarea:focus,
+.contact-section form select:focus {
   border-color: hsl(244, 63%, 51%);
   outline: none;
   box-shadow: 0 6px 25px rgba(36, 123, 255, 0.2);
 }
 
-form textarea {
+.contact-section form textarea {
   resize: vertical;
-   min-height: 100px;
+  min-height: 100px;
   min-width: 100px;
 }
 
-form button {
+.contact-section form button {
   display: block;
-   width: 50%;
+  width: 100%;
+  max-width: 240px;
+  margin-inline: auto;
   padding: 16px;
   background: linear-gradient(135deg, hsl(244, 63%, 51%), hsl(258, 89%, 66%));
   color: #fff;
@@ -749,45 +833,85 @@ form button {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(36, 123, 255, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
-form button:hover {
+.contact-section form button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 25px rgba(36, 123, 255, 0.35);
+  box-shadow: 0 12px 25px rgba(80, 142, 234, 0.35);
   background: linear-gradient(135deg, hsl(244, 63%, 41%), hsl(258, 89%, 56%));
 }
 
-form button:active {
+.contact-section form button:active {
   transform: translateY(0);
   box-shadow: 0 6px 15px rgba(36, 123, 255, 0.25);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-  form {
-    padding: 30px 20px;
+  .contact-section form {
+    width: min(100%, 360px);
+  }
+}
+
+@media (min-width: 769px) {
+  .contact-section form {
+    width: clamp(720px, 80vw, 1000px);
   }
 }
 
 @media (max-width: 480px) {
-  form h2 {
+  .contact-section form h2 {
     font-size: 1.6rem;
   }
-
-  form input,
-  form textarea,
-  form select {
+  .contact-section form input,
+  .contact-section form textarea,
+  .contact-section form select {
     padding: 12px 14px;
   }
-
-  form button {
+  .contact-section form button {
     padding: 50px;
   }
 }
+
+
+/* ------------------------------
+   Back Button (Fee & Contact Page)
+------------------------------ */
+.back-btn {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 10px 20px;
+  background: #0077cc;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.back-btn:hover {
+  background: #005fa3;
+}
+
+/* ------------------------------
+   Responsive Design
+------------------------------ */
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;   /* cards take more width on small screens */
+  }
+
+  table {
+    font-size: 14px;
+  }
+}
+
 /* Map styling */
 /* Main container */
-.container {
+.container { 
   max-width: 1000px;
   margin: 40px auto;
   padding: 20px;
@@ -816,10 +940,10 @@ form button:active {
 #map {
   width: 100%;
   max-width: 800px;
-  height: 400px;
+  height: clamp(16rem, 50vw, 26rem);
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
+  transition: box-shadow 0.3s ease; /* Fixed flickering */
 }
 
 /* Toggle button */
@@ -865,7 +989,7 @@ body.dark .mode-toggle:hover {
 
 @media screen and (max-width: 768px) {
   #map {
-    height: 300px;
+    height: 400px;
   }
 
   .container h1 {
@@ -878,35 +1002,18 @@ body.dark .mode-toggle:hover {
 
   .mode-toggle {
     padding: 10px 20px;
-    font-size: 0.95rem;
-  }
-}
-
-@media screen and (max-width: 100%) {
-  #map {
-    height:fit-content;
-  }
-
-  .container h1 {
-    font-size: 1.5rem;
-  }
-
-  .container p {
-    font-size: 0.9rem;
-  }
-
-  .mode-toggle {
-    padding: 8px 16px;
     font-size: 0.9rem;
   }
 }
------------------------------
+
+
+/* -----------------------------
   Footer
 ------------------------------ */
 .footer {
   background: var(--gray-900);
   color: var(--gray-300);
-  padding: var(--space-16) var(--space-6) var(--space-8);
+  padding: var(--space-16) var(--space-6) var(--space-8;
 }
 
 .footer-content {
@@ -1038,8 +1145,10 @@ body.dark .mode-toggle:hover {
   }
   
   .hero {
-    height: 80vh;
-    min-height: 500px;
+    background-attachment: scroll;
+    min-height: clamp(22rem, 70vh, 28rem);
+    padding: clamp(var(--space-10), 12vw, var(--space-12))
+             clamp(var(--space-4), 8vw, var(--space-8));
   }
   
   .hero h1 {
@@ -1071,20 +1180,11 @@ body.dark .mode-toggle:hover {
 /* Small Mobile */
 @media (max-width: 480px) {
   .hero-content {
-    padding: 0 var(--space-4);
+    padding-inline: var(--space-4);
   }
-  
-  .hero h1 {
-    font-size: var(--text-3xl);
-  }
-  
-  .section-title {
-    font-size: var(--text-2xl);
-  }
-  
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
+
+  #map {
+    height: clamp(14rem, 60vw, 20rem);
   }
 }
 
@@ -1168,4 +1268,3 @@ body.dark .mode-toggle:hover {
     display: flex;
   }
 }
-

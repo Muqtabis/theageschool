@@ -1,4 +1,4 @@
-document.getElementById('contact-form').addEventListener('submit', function(e) {
+function handleContactSubmit(e) {
   e.preventDefault();
   // Basic form validation
   const name = document.getElementById('name').value.trim();
@@ -12,37 +12,58 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
   } else {
     alert('Please fill in all fields.');
   }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', handleContactSubmit);
+  }
+  const modeToggle = document.getElementById('mode-toggle');
+  if (modeToggle) {
+    modeToggle.addEventListener('click', toggleMode);
+    applyMode();
+  }
 });
 let map;
 let darkMode = false;
 
-// Light style (empty = default)
-const lightStyle = [];
-
-// Dark style
+// Map styles
+const lightStyle = []; // default light style
 const darkStyle = [
-  { elementType: "geometry", stylers: [{ color: "#212121" }] },
-  { elementType: "labels.icon", stylers: [{ visibility: "off" }] },
-  { elementType: "labels.text.fill", stylers: [{ color: "#757575" }] },
-  { elementType: "labels.text.stroke", stylers: [{ color: "#212121" }] },
-  { featureType: "road", elementType: "geometry", stylers: [{ color: "#2c2c2c" }] },
-  { featureType: "water", elementType: "geometry", stylers: [{ color: "#000000" }] }
+  { elementType: 'geometry', stylers: [{color: '#242f3e'}] },
+  { elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}] },
+  { elementType: 'labels.text.fill', stylers: [{color: '#746855'}] },
+  {
+    featureType: 'road',
+    elementType: 'geometry',
+    stylers: [{color: '#38414e'}]
+  },
+  {
+    featureType: 'water',
+    elementType: 'geometry',
+    stylers: [{color: '#17263c'}]
+  }
 ];
 
+// Initialize Map
 function initMap() {
-    const schoolLocation = { lat: 17.866025529658344, lng: 76.95108130579983 };
-    const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 15,
-      center: schoolLocation,
-    });
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 17.866025529658344, lng: 76.95108130579983}, // Change to your school coordinates
+    zoom: 15,
+    styles: lightStyle
+  });
 
-function toggleMode() {
-  darkMode = !darkMode;
-  document.body.classList.toggle("dark", darkMode);
-  map.setOptions({ styles: darkMode ? darkStyle : lightStyle });
+  // Marker
+  new google.maps.Marker({
+    position: {lat: 17.866025529658344, lng: 76.95108130579983}, // Change to your school coordinates
+    map: map,
+    title: 'TheAgeSchool'
+  });
 }
 
-    new google.maps.Marker({ position: schoolLocation, map: map });
-  }
-window.initMap = initMap;
-document.getElementById('mode-toggle').addEventListener('click', toggleMode);
+// Toggle Dark/Light Mode
+function toggleMode() {
+  darkMode = !darkMode;
+  map.setOptions({ styles: darkMode ? darkStyle : lightStyle });
+}
