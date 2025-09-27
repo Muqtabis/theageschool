@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>School Gallery & Achievements</title>
+  <link rel="stylesheet" href="gallery.css">
+
+  <!-- Gallery Section -->
+<section class="gallery" id="gallery">
+  <h2>Gallery & Achievements</h2>
+
+  <!-- Filter Buttons -->
+  <div class="filter-buttons">
+    <button class="active" onclick="filterSelection('all', event)">All</button>
+    <button onclick="filterSelection('events', event)">Events</button>
+    <button onclick="filterSelection('sports', event)">Sports</button>
+    <button onclick="filterSelection('labs', event)">Labs</button>
+    <button onclick="filterSelection('classroom', event)">Classrooms</button>
+    <button onclick="filterSelection('awards', event)">Awards</button>
+  </div>
+
+  <!-- Image Grid -->
+  <div class="gallery-grid">
+    <img src="images/event1.jpg" class="filter-item events" alt="Annual Cultural Event" data-caption="Annual Cultural Event 2024" onclick="openLightbox(0)">
+    <img src="images/sports.jpg" class="filter-item sports" alt="Sports Day" data-caption="Sports Day – Relay Race Winners" onclick="openLightbox(1)">
+    <img src="images/lab.jpg" class="filter-item labs" alt="Science Lab" data-caption="Science Lab – Robotics Workshop" onclick="openLightbox(2)">
+    <img src="images/classroom.jpg" class="filter-item classroom" alt="Classroom" data-caption="Smart Classroom – Interactive Learning" onclick="openLightbox(3)">
+    <img src="images/award.jpg" class="filter-item awards" alt="Award Ceremony" data-caption="Award Ceremony – Best School 2024" onclick="openLightbox(4)">
+    <img src="images/event2.jpg" class="filter-item events" alt="Cultural Dance" data-caption="Cultural Dance Performance – Annual Fest" onclick="openLightbox(5)">
+    <img src="images/sports2.jpg" class="filter-item sports" alt="Football Match" data-caption="Football Match – Inter-School League" onclick="openLightbox(6)">
+    <img src="images/lab2.jpg" class="filter-item labs" alt="Chemistry Lab" data-caption="Chemistry Lab – Experiment Day" onclick="openLightbox(7)">
+    <img src="images/classroom2.jpg" class="filter-item classroom" alt="Junior Class" data-caption="Junior Class – Storytelling Session" onclick="openLightbox(8)">
+    <img src="images/award2.jpg" class="filter-item awards" alt="Student Award" data-caption="Student Award – Science Fair Winner" onclick="openLightbox(9)">
+  </div>
+
+  <!-- Load More Button -->
+  <button id="loadMoreBtn" class="load-more">Load More</button>
+</section>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="lightbox">
+  <span class="close" onclick="closeLightbox()">&times;</span>
+  <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+  <div class="lightbox-content">
+    <img id="lightbox-img">
+    <p id="lightbox-caption"></p>
+  </div>
+  <span class="next" onclick="changeSlide(1)">&#10095;</span>
+</div>
+
+<!-- Link CSS & JS -->
+<link rel="stylesheet" href="gallery.css">
+<script src="gallery.js"></script>
+<script src="gallery-images.js"></script>
+</body>
+</html>

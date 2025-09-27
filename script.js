@@ -67,3 +67,5 @@ function toggleMode() {
   darkMode = !darkMode;
   map.setOptions({ styles: darkMode ? darkStyle : lightStyle });
 }
+
+

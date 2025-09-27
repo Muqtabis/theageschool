@@ -1,0 +1,156 @@
+.gallery {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.gallery h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #013a63;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  margin-bottom: 20px;
+}
+.filter-buttons button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  background: #013a63;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.filter-buttons button:hover,
+.filter-buttons .active {
+  background: #01497c;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+.gallery-grid img {
+  width: 100%;
+  border-radius: 12px;
+  cursor: pointer;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.gallery-grid img.hide {
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+}
+
+/* Load More Button */
+.load-more {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  background: #01497c;
+  color: white;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.load-more:hover {
+  background: #ffcc00;
+  color: #013a63;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+.lightbox-content {
+  text-align: center;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 75%;
+  border-radius: 12px;
+}
+#lightbox-caption {
+  margin-top: 15px;
+  color: #f1f1f1;
+  font-size: 18px;
+}
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+.lightbox .prev,
+.lightbox .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  user-select: none;
+}
+.lightbox .prev {
+  left: 20px;
+}
+.lightbox .next {
+  right: 20px;
+}
+.lightbox .prev:hover,
+.lightbox .next:hover {
+  color: #ffcc00;
+}
+@media (max-width: 600px) {
+  .gallery {
+    padding: 40px 10px;
+  }
+  .gallery h2 {
+    font-size: 1.5rem;
+  }
+  .filter-buttons button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+  .load-more {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 400px) {
+  .lightbox .prev,
+  .lightbox .next {
+    font-size: 30px;
+    padding: 10px;
+  }
+  .lightbox .close {
+    font-size: 30px;
+    top: 10px;
+    right: 15px;
+  }
+}
+@media (max-width: 300px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
