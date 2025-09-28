@@ -1,0 +1,35 @@
+{
+  "albums": [
+    {
+      "id": 1759017170157,
+      "name": "ss",
+      "eventDate": "2025-09-12",
+      "description": "ddfgh",
+      "photos": [
+        {
+          "id": 1759017188664.7056,
+          "src": "/uploads/1759017188648-287543924.png",
+          "caption": "Screenshot 2025-05-29 024051.png"
+        },
+        {
+          "id": 1759017188664.0662,
+          "src": "/uploads/1759017188651-562052490.png",
+          "caption": "Screenshot 2025-05-29 024141.png"
+        }
+      ]
+    },
+    {
+      "id": 1759017119957,
+      "name": "logo",
+      "eventDate": "2025-09-01",
+      "description": "jkjhgf",
+      "photos": [
+        {
+          "id": 1759017152681.761,
+          "src": "/uploads/1759017152663-787854361.png",
+          "caption": "Screenshot 2025-05-31 015026.png"
+        }
+      ]
+    }
+  ]
+}

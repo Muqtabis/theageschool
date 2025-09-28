@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "dotenv": "*",
+    "uuid": "*"
+  },
+  "devDependencies": {
+    "nodemon": "*"
+  }
+}

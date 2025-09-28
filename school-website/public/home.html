@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Age School</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="theagelogo.jpg" alt="The Age School Logo" class="logo-img">
+        <span>The Age School</span>
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#fee-structure">Fee Structure</a></li>
+        <li><a href="#contact">Contact</a></li>
+         <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+
+      <!-- Hamburger Menu -->
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+
+
+<!-- JavaScript -->
+<script src="script.js"></script>
+<!-- JS for Hamburger Toggle -->
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+
+
+    <section id="home" class="hero">
+        
+        <h1>Welcome to The Age School</h1>
+<div>
+        <p>📚 Discover. Learn. Lead.</p>
+        <p>Where learning meets innovation, and every child’s journey is valued.</p>
+        <p>Join The Age School today, where every age is the right age to learn and shine.</p>
+        </div> 
+        <a href="#contact" class="btn">Get in Touch</a>
+    </section>
+<section id="about" class="about-section">
+
+    <!-- About Us Section -->
+<section style="background:#f5f7fa; padding:60px 20px; font-family: Arial, sans-serif;">
+  <div style="max-width:1000px; margin:0 auto;">
+    
+    <h2 style="text-align:center; color:#0c1a32; margin-bottom:50px; font-size:32px;">About Us</h2>
+
+    <div style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center;">
+
+      <!-- Card 1 -->
+      <div style="background:#ffffff; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.1); padding:25px; width:300px; transition: transform 0.3s;">
+        <div style="font-size:24px; color:#ff6600; margin-bottom:15px;">✦</div>
+        <h3 style="color:#0c1a32; margin-bottom:15px;">Welcome to The Age School</h3>
+        <p style="color:#555; font-size:15px; line-height:1.7;">
+          A place where learning is exciting, creativity is celebrated, and every child’s potential is valued. Education goes beyond textbooks, inspiring students to explore, innovate, and grow into confident individuals.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div style="background:#ffffff; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.1); padding:25px; width:300px; transition: transform 0.3s;">
+        <div style="font-size:24px; color:#ff6600; margin-bottom:15px;">✦</div>
+        <h3 style="color:#0c1a32; margin-bottom:15px;">Our Approach</h3>
+        <p style="color:#555; font-size:15px; line-height:1.7;">
+          We combine strong academics with opportunities in arts, sports, and life skills to create well-rounded learners. Classrooms spark curiosity while activities build teamwork and leadership, making learning enjoyable every step of the way.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div style="background:#ffffff; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.1); padding:25px; width:300px; transition: transform 0.3s;">
+        <div style="font-size:24px; color:#ff6600; margin-bottom:15px;">✦</div>
+        <h3 style="color:#0c1a32; margin-bottom:15px;">Dedicated Teachers</h3>
+        <p style="color:#555; font-size:15px; line-height:1.7;">
+          Our caring and dedicated teachers provide personalized attention, encouragement, and freedom to express themselves. We emphasize values like respect, empathy, and responsibility—helping students succeed in life and studies.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Hover Effect -->
+<style>
+  section div div:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  }
+</style>
+
+    </section>
+
+    <!-- Slideshow Section -->
+<section class="slideshow-container">
+    <h2 style="color: rgb(20, 8, 61);">Latest Moments </h2>
+    <div class="slideshow">
+        <button class="prev-btn" id="prev-btn">&#10094;</button>
+        <button class="next-btn" id="next-btn">&#10095;</button>
+    </div>
+    
+    <div id="dot-container" class="dot-container"></div>
+</section>
+
+<script src="slideshow.js"></script>
+<link rel="stylesheet" href="slideshow.css">
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+      <h2 style="text-align:center; color:#0c1a32; margin-bottom:40px;">Our Services</h2>
+
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:25px;">
+
+    <!-- Service 1 -->
+    <div style="background:#ffffff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); width:250px; text-align:center; padding:25px; transition: transform 0.3s;">
+      <img src="https://via.placeholder.com/80" alt="Academics" style="margin-bottom:15px;">
+      <h3 style="color:#0c1a32; margin-bottom:10px;">Strong Academics</h3>
+      <p style="font-size:14px; color:#555;">Comprehensive curriculum designed to foster critical thinking, knowledge, and academic excellence from UKG to 10th grade.</p>
+    </div>
+
+    <!-- Service 2 -->
+    <div style="background:#ffffff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); width:250px; text-align:center; padding:25px; transition: transform 0.3s;">
+      <img src="https://via.placeholder.com/80" alt="Sports" style="margin-bottom:15px;">
+      <h3 style="color:#0c1a32; margin-bottom:10px;">Sports & Fitness</h3>
+      <p style="font-size:14px; color:#555;">Encouraging physical development and teamwork through a wide range of sports and outdoor activities.</p>
+    </div>
+
+    <!-- Service 3 -->
+    <div style="background:#ffffff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); width:250px; text-align:center; padding:25px; transition: transform 0.3s;">
+      <img src="https://via.placeholder.com/80" alt="Arts" style="margin-bottom:15px;">
+      <h3 style="color:#0c1a32; margin-bottom:10px;">Arts & Creativity</h3>
+      <p style="font-size:14px; color:#555;">Fostering creativity through music, dance, drama, and visual arts to build confidence and imagination.</p>
+    </div>
+
+    <!-- Service 4 -->
+    <div style="background:#ffffff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); width:250px; text-align:center; padding:25px; transition: transform 0.3s;">
+      <img src="https://via.placeholder.com/80" alt="Life Skills" style="margin-bottom:15px;">
+      <h3 style="color:#0c1a32; margin-bottom:10px;">Life Skills & Leadership</h3>
+      <p style="font-size:14px; color:#555;">Programs to develop leadership, communication, and problem-solving skills for real-world success.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Optional: Add hover effect -->
+<style>
+  section div:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+</style>
+
+
+    <!-- Team Section -->
+<section id="team" class="team-section">
+<section style="background:#f9fbfd; padding: 50px 20px; font-family: Arial, sans-serif;">
+  <h2 style="text-align:center; color:#0c1a32; margin-bottom: 40px;">Our Dedicated Team</h2>
+
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
+
+    <!-- Staff Card 1 -->
+    <div style="background:#ffffff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); width:250px; text-align:center; padding:20px;">
+      <img src="https://via.placeholder.com/150" alt="President" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
+      <h3 style="margin:10px 0; color:#0c1a32;">Yunusuddin Nilange</h3>
+      <p style="margin:0; font-size:14px; color:#ff6600; font-weight:bold;">President</p>
+      <p style="font-size:13px; color:#555; margin-top:10px;">Leader with 20+ years of experience in nurturing academic excellence and holistic education.</p>
+    </div>
+
+    <!-- Staff Card 2 -->
+    <div style="background:#ffffff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); width:250px; text-align:center; padding:20px;">
+      <img src="c:\Users\ahmar\Downloads\mubbashir.jpg" alt="Vice President" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
+      <h3 style="margin:10px 0; color:#0c1a32;">Mubbashir Gobre</h3>
+      <p style="margin:0; font-size:14px; color:#ff6600; font-weight:bold;">Vice President, Trustee</p>
+      <p style="font-size:13px; color:#555; margin-top:10px;"></p>
+    </div>
+
+    <!-- Staff Card 3 -->
+    <div style="background:#ffffff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); width:250px; text-align:center; padding:20px;">
+      <img src="https://via.placeholder.com/150" alt="Principal" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
+      <h3 style="margin:10px 0; color:#0c1a32;">Mrs. Neha Sharma</h3>
+      <p style="margin:0; font-size:14px; color:#ff6600; font-weight:bold;">Principal</p>
+      <p style="font-size:13px; color:#555; margin-top:10px;">Inspiring young minds with hands-on experiments and interactive science learning.</p>
+    </div>
+
+    <!-- Staff Card 4 -->
+    <div style="background:#ffffff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); width:250px; text-align:center; padding:20px;">
+      <img src="https://via.placeholder.com/150" alt="Teacher" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
+      <h3 style="margin:10px 0; color:#0c1a32;">Ms. Priya Nair</h3>
+      <p style="margin:0; font-size:14px; color:#ff6600; font-weight:bold;">English Teacher</p>
+      <p style="font-size:13px; color:#555; margin-top:10px;">Dedicated to improving communication skills and building a love for literature.</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+        <!-- Pricing Section -->
+         
+<section id="fee-structure" class="fee-structure-section">
+  <div class="container">
+    <h2>Fee Structure</h2>
+    <p>Explore detailed tuition information, payment schedules, and available concessions.</p>
+    <div class="card">
+      <a href="fee-structure.html">📘 Fee Structure</a>
+    </div>
+  </div>
+  </section>
+   <!-- Contact Section -->
+<section id="contact" class="contact-section">
+ <div class="card">
+    <a href="contact.html">✉️ Contact Us</a>
+  </div>
+</section>  
+</section>
+
+   <footer style="background:#0c1a32; color:#ffffff; padding:30px 20px; font-family:Arial, sans-serif;">
+  <p style="text-align:center; margin:0 0 15px;">&copy; 2025 The Age School. All rights reserved.</p>
+  <div style="text-align:center; margin-bottom:15px;">
+    <a href="https://www.facebook.com/theageschool/" target="_blank" style="color:#ffffff; margin:0 10px; font-size:18px;">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.instagram.com/theageschool?igsh=dmJ6M2Z5dTQxY3M1" target="_blank" style="color:#ffffff; margin:0 10px; font-size:18px;">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/the-age-school-92109a255?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B1lNZQfmaQragOhoHRm%2FMxQ%3D%3D" target="_blank" style="color:#ffffff; margin:0 10px; font-size:18px;">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+  </div>
+  <div style="text-align:center; font-size:13px; font-style:italic;">
+    <p style="margin:5px 0;">Designed &amp; Developed by <strong>Muqtabis Ahmar</strong></p>
+    <p style="margin:5px 0;">
+      Contact: <a href="mailto:muqtabis.gbr@gmail.com" style="color:#ffcc00; text-decoration:none;">muqtabis.gbr@gmail.com</a>
+    </p>
+  </div>
+</footer>
+
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you for your message!');
+        });
+        </script>
+    <script>
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        }); 
+    </script>
+    <script>
+        // Example of a simple JavaScript function to change the background color
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = '#f0f0f0';
+        }
+        changeBackgroundColor();
+    </script>
+
+    <script>
+        // Example of a simple JavaScript function to log the current date
+        function logCurrentDate() {
+            const currentDate = new Date();
+            console.log(`Current Date: ${currentDate.toLocaleDateString()}`);
+        }
+        logCurrentDate();
+    </script>
+
+
+    <script>
+        // Example of a simple JavaScript function to change the text color
+        function changeTextColor() {
+            document.querySelector('h1').style.color = '#4CAF50';
+        }
+        changeTextColor();
+    </script>
+    <script>
+        // Example of a simple JavaScript function to log a message when the page is loaded
+        window.addEventListener('load', function() {
+            console.log('Page has fully loaded.');
+        });
+    </script>
+    <script>
+        // Example of a simple JavaScript function to toggle the visibility of the contact form
+        function toggleContactForm() {
+            const form = document.getElementById('contact-form');
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        }
+        // Call the function to hide the form initially
+        toggleContactForm();
+    </script>
+  
+
+</body>
+
+</html>

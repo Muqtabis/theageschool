@@ -1,0 +1,103 @@
+/* slideshow.css */
+
+/* Main Slideshow Container */
+.slideshow-container {
+    max-width: 400px; /* Adjust the width of the slideshow */
+    margin: 40px auto; /* Centers the slideshow on the page */
+    font-family: 'Poppins', sans-serif;
+    color: rgb(20, 8, 61);
+    text-align: center;
+}
+
+/* Core Slideshow Styles */
+.slideshow {
+    position: relative;
+    background-color: #f1f1f1; /* Placeholder color while image loads */
+    border-radius: 20px;
+    overflow: hidden; /* Ensures buttons with rounded corners look clean */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual Slide (assumes JS creates these) */
+.slide {
+    display: none; /* Hide all slides by default */
+    animation: fadeEffect 1.5s ease; /* Apply fade animation */
+}
+
+/* Image within a slide */
+.slide img {
+    width: 100%;
+    height: 500px; /* Set a consistent height for the slideshow */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    display: block;
+}
+
+/* Fade Animation */
+@keyframes fadeEffect {
+    from { opacity: 0.5; }
+    to { opacity: 2; }
+}
+
+/* Next & Previous Buttons */
+.prev-btn,
+.next-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Perfectly centers the buttons vertically */
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    user-select: none; /* Prevents text selection on double-click */
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.prev-btn {
+    left: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.next-btn {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Navigation Dots Container */
+.dot-container {
+    text-align: center;
+    padding-top: 15px;
+}
+
+/* Individual Dots (assumes JS creates these) */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+/* Active and Hovered Dot */
+.dot.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .slide img {
+        height: 350px;
+    }
+}
