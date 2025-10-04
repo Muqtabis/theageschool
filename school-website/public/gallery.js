@@ -186,18 +186,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxClose = document.querySelector('.lightbox-close-btn');
-    const openLightbox = (src) => { lightbox.style.display = 'flex'; lightboxImg.src = src; };
-    const closeLightbox = () => { lightbox.style.display = 'none'; };
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (e) => { if(e.target === lightbox) closeLightbox(); });
+    const openLightbox = (src) => {
+        if (!lightbox || !lightboxImg) return;
+        lightbox.style.display = 'flex';
+        lightboxImg.src = src;
+    };
+    const closeLightbox = () => { if (lightbox) lightbox.style.display = 'none'; };
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    if (lightbox) {
+        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    }
 
     // --- Initializer ---
     const init = async () => {
-        const session = await api.getSession();
-        isAdmin = session.isAdmin;
-        
+        try {
+            const session = await api.getSession();
+            isAdmin = !!(session && session.isAdmin);
+        } catch (err) {
+            console.warn('Session fetch failed; defaulting to non-admin.', err);
+            isAdmin = false;
+        }
+
         if (isAdmin) {
-            adminFab.style.display = 'block';
+            if (adminFab) adminFab.style.display = 'block';
             initModal();
         }
 
